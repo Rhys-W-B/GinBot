@@ -10,7 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "discord-player": "^5.4.0",
     "discord.js": "^14.7.1",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "node-require": "^0.0.10",
+    "require": "^2.4.20",
+    "yt-search": "^2.10.4",
+    "ytdl": "^1.4.1",
+    "ytdl-core": "^4.11.2"
   }
 }
