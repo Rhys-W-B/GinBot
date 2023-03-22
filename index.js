@@ -84,12 +84,12 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
 client.on(`messageCreate`, message =>{
-    if(!message.author.bot && message.author.username == `JacktBear04`){
+    if(!message.author.bot && message.author.username == `Jacktbear04`){
         message.react(`🥜`)
     }
     if(!message.author.bot){
         
-        if(getRandomInt(10) == 10){
+        if(getRandomInt(50) == 25){
             message.react(`🥜`)
         }
     }
