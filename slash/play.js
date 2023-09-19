@@ -11,13 +11,13 @@ module.exports = {
             .setName("song")
             .setDescription("loads song from url")
             .addStringOption((option)=>option.setName("url").setDescription("the song`s url").setRequired(true))
-            )
+            )/*
         .addSubcommand((subcommand)=>
             subcommand
             .setName("playlist")
             .setDescription("loads playlist of songs from url")
             .addStringOption((option)=>option.setName("url").setDescription("the playlist`s url").setRequired(true))
-            )
+            )*/
         .addSubcommand((subcommand)=>
             subcommand
             .setName("search")

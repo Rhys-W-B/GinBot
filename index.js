@@ -83,14 +83,47 @@ client.on(`ready`,() => {
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
+
+  let isFunctionAllowed = true;
+  let gobecount = 0;
 client.on(`messageCreate`, message =>{
-    if(!message.author.bot && message.author.username == `Jacktbear04`){
-        message.react(`🥜`)
+    if(!message.author.bot && message.author.id == '357981604569808899'){
+        if (isFunctionAllowed) {
+            isFunctionAllowed = false;
+            message.react(`🥜`)
+            setTimeout(() => {
+              isFunctionAllowed = true;
+            }, 10000);
+          }
+    }
+    if(!message.author.bot&&message.author.id == "364085988357701642"){
+        gobecount++;
+        if(gobecount%10 == 0){
+            message.react('<:gobe:1114364659663917186>')
+        }
+        
     }
     if(!message.author.bot){
         
         if(getRandomInt(50) == 25){
             message.react(`🥜`)
+        }
+        if(getRandomInt(50) == 12){
+            message.react('<:gobe:1114364659663917186>')
+        }
+    }
+    if(!message.author.bot){
+        if(message.content == '!quote'){
+            try{
+                const repliedmessageID = message.reference.messageId
+                message.channel.messages.fetch(repliedmessageID)
+                    .then(message => client.channels.cache.get('1092845261681873017').send(message.author.username + ":\n" + message.content))
+                    .catch(console.error);
+            }
+            catch(error){
+                console.error
+            }
+            
         }
     }
 })

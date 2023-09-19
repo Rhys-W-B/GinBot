@@ -18,10 +18,18 @@ module.exports = {
         let amount = parseInt(myArr[0])
         let x = parseInt(myArr[1])
         let val = 0;
-        for(let i = 0; i < amount; i++){
-            val+=getRandomInt(x);
+        if(x >= Number.MAX_SAFE_INTEGER-1 || x >= Number.MAX_SAFE_INTEGER-1||
+           amount >= Number.MAX_SAFE_INTEGER-1 || amount >= Number.MAX_SAFE_INTEGER-1){
+            await interaction.editReply("Too big! imput a smaller number please");
         }
-        await interaction.editReply("rolled "+amount+"d" + x + " and got: " + val)
+        if(!Number.isInteger(x) || !Number.isInteger(amount)){
+            await interaction.editReply("Incorrect input, please try again")
+        }else{
+            for(let i = 0; i < amount; i++){
+                val+=getRandomInt(x);
+            }
+            await interaction.editReply("rolled "+amount+"d" + x + " and got: " + val);
+        }
     }
     
 }
